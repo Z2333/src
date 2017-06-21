@@ -14,11 +14,11 @@
     ul li {
     	list-style: none;
     }
-    
+
     .header {
         margin-bottom: 50px;
     }
-    
+
     .operation>div {
         padding: 15px;
     }
@@ -26,11 +26,11 @@
     .operation.row .text-center button {
     	outline-style: none;
     }
-    
+
     .forms li {
         display: none;
     }
-    
+
     .forms li button {
         margin-right: 30px;
     }
@@ -60,7 +60,7 @@
                     <div class="form-group">
                         <label for="stuId" class="col-sm-2 control-label">学生学号</label>
                         <div class="col-sm-10">
-                            <input type="text" name="stuId" class="form-control" id="stuId" placeholder="请输入学生学号">
+                            <input type="text" name="id" class="form-control" id="id" placeholder="请输入学生学号">
                         </div>
                     </div>
                     <div class="form-group">
@@ -73,6 +73,18 @@
                         <label for="age" class="col-sm-2 control-label">学生年龄</label>
                         <div class="col-sm-10">
                             <input type="text" name="age" class="form-control" id="age" placeholder="请输入学生年龄">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="sex" class="col-sm-2 control-label">学生性别</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="sex" class="form-control" id="sex" placeholder="请输入学生性别">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Sid" class="col-sm-2 control-label">学生学院编号</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Sid" class="form-control" id="Sid" placeholder="请输入学生学院编号">
                         </div>
                     </div>
                     <div class="text-center">
@@ -97,16 +109,28 @@
             </li>
             <li>
                 <form class="form-horizontal" method="get" action="/cgi-bin/sx/mod.cgi">
+                  <div class="form-group">
+                      <label for="name-mod" class="col-sm-2 control-label">学生姓名</label>
+                      <div class="col-sm-10">
+                          <input type="text" name="name" class="form-control" id="name-mod" placeholder="请输入学生姓名">
+                      </div>
+                  </div>
                     <div class="form-group">
-                        <label for="stuId-mod" class="col-sm-2 control-label">学生学号</label>
+                        <label for="id-mod" class="col-sm-2 control-label">学生学号</label>
                         <div class="col-sm-10">
-                            <input type="text" name="stuId" class="form-control" id="stuId-mod" placeholder="请输入学生学号">
+                            <input type="text" name="id" class="form-control" id="id-mod" placeholder="请输入学生学号">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name-mod" class="col-sm-2 control-label">学生姓名</label>
+                        <label for="sex-mod" class="col-sm-2 control-label">学生性别</label>
                         <div class="col-sm-10">
-                            <input type="text" name="name" class="form-control" id="name-mod" placeholder="请输入学生姓名">
+                            <input type="text" name="sex" class="form-control" id="sex-mod" placeholder="请输入学生姓名">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Sid-mod" class="col-sm-2 control-label">学生学院编号</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Sid" class="form-control" id="Sid-mod" placeholder="请输入学生姓名">
                         </div>
                     </div>
                     <div class="form-group">
@@ -124,9 +148,9 @@
             <li>
                 <form class="form-horizontal" method="get" action="/cgi-bin/sx/del.cgi">
                     <div class="form-group">
-                        <label for="stuId-del" class="col-sm-2 control-label">输入要删除的学生Id</label>
+                        <label for="id-del" class="col-sm-2 control-label">输入要删除的学生Id</label>
                         <div class="col-sm-10">
-                            <input type="text" name="stuId" class="form-control" id="stuId-del" placeholder="输入学生Id">
+                            <input type="text" name="id" class="form-control" id="id-del" placeholder="输入学生Id">
                         </div>
                     </div>
                     <div class="text-center">

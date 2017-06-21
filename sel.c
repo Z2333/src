@@ -36,13 +36,12 @@ int cgiMain()
 
 	if (name[0] == '*')
 	{
-		sprintf(sql, "select * from stu");
+		sprintf(sql, "select * from information");
 	}
 	else
 	{
-		sprintf(sql, "select * from stu where name = '%s'", name);
+		sprintf(sql, "select * from information where name = '%s'", name);
 	}
-
 
 	//初始化
 	db = mysql_init(NULL);
@@ -67,7 +66,7 @@ int cgiMain()
 	{
 		fprintf(cgiOut,"mysql_real_query fail:%s\n", mysql_error(db));
 		mysql_close(db);
-		return ;
+		return -1;
 	}
 
 	MYSQL_RES *res;
