@@ -20,13 +20,13 @@ int cgiMain()
 		    <link rel=\"stylesheet\" href=\"/stu/public/css/bootstrap.min.css\">\
 		</head>");
 
-	char name[32] = "\0";
+	char id[32] = "\0";
 	int status = 0;
 
-	status = cgiFormString("name",  name, 32);
+	status = cgiFormString("id",  id, 32);
 	if (status != cgiFormSuccess)
 	{
-		fprintf(cgiOut, "get name error!\n");
+		fprintf(cgiOut, "get id error!\n");
 		return 1;
 	}
 
@@ -34,13 +34,13 @@ int cgiMain()
 	MYSQL *db;
 	char sql[128] = "\0";
 
-	if (name[0] == '*')
+	if (id[0] == '*')
 	{
-		sprintf(sql, "select * from information where sta=0");
+		sprintf(sql, "select * from score");
 	}
 	else
 	{
-		sprintf(sql, "select * from information where name = '%s' add sta=0", name);
+		sprintf(sql, "select * from score where id = '%s'", id);
 	}
 
 	//初始化
@@ -50,7 +50,6 @@ int cgiMain()
 		fprintf(cgiOut,"mysql_init fail:%s\n", mysql_error(db));
 		return -1;
 	}
-
 	//连接数据库
 	db = mysql_real_connect(db, "127.0.0.1", "root", "123456", "stu",  3306, NULL, 0);
 	if (db == NULL)

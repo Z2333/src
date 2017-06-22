@@ -9,48 +9,28 @@ int cgiMain()
 
 	fprintf(cgiOut, "Content-type:text/html;charset=utf-8\n\n");
 
-	char name[32] = "\0";
-	char id[32] =  "\0";
-	char sex[20] = "\0";
-	char Sid[32] =  "\0";
-	char age[16] = "\0";
+	char Sname[32] = "\0";
+	char Sid[20] =  "\0";
+
 
 	int status = 0 ;
 
-	status = cgiFormString("name",  name, 32);
+	status = cgiFormString("Sname",  Sname, 32);
 	if (status != cgiFormSuccess)
 	{
-		fprintf(cgiOut, "get name error!\n");
+		fprintf(cgiOut, "get Sname error!\n");
 		return 1;
 	}
 
-	status = cgiFormString("age",  age, 16);
-	if (status != cgiFormSuccess)
-	{
-		fprintf(cgiOut, "get age error!\n");
-		return 1;
-	}
 
-	status = cgiFormString("id",  id, 32);
-	if (status != cgiFormSuccess)
-	{
-		fprintf(cgiOut, "get id error!\n");
-		return 1;
-	}
-	status = cgiFormString("sex",  sex, 20);
-	if (status != cgiFormSuccess)
-	{
-		fprintf(cgiOut, "get sex error!\n");
-		return 1;
-	}
-	status = cgiFormString("Sid", Sid, 32);
+	status = cgiFormString("Sid", Sid, 20);
 	if (status != cgiFormSuccess)
 	{
 		fprintf(cgiOut, "get Sid error!\n");
 		return 1;
 	}
 
-	//fprintf(cgiOut, "name = %s, age = %s, id = %s,sex = %s,Sid =%s\n", name, age, id,sex,Sid);
+	//fprintf(cgiOut, "Sname = %s, Sid =%s\n", Sname, Sid);
 
 	int ret;
 	char sql[128] = "\0";
@@ -74,7 +54,7 @@ int cgiMain()
 	}
 
 
-	sprintf(sql, "update information set Sid=%d, name='%s', age= %d ,sex='%s' where id = %d ",atoi(Sid),name, atoi(age),sex,atoi(id));
+	sprintf(sql, "update school set Sname='%s',  where Sid = %d ", Sname,atoi(Sid));
 	if ((ret = mysql_real_query(db, sql, strlen(sql) + 1)) != 0)
 	{
 		fprintf(cgiOut,"mysql_real_query fail:%s\n", mysql_error(db));
@@ -84,7 +64,7 @@ int cgiMain()
 
 
 
-	fprintf(cgiOut, "update student ok!\n");
+	fprintf(cgiOut, "update school ok!\n");
 	mysql_close(db);
 	return 0;
 }

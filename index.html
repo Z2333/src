@@ -53,6 +53,28 @@
             <div class="text-center col-md-3 col-sm-6">
                 <button>删除学生信息</button>
             </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>添加学院信息</button>
+            </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>查询学院信息</button>
+            </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>删除学院信息</button>
+            </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>添加成绩信息</button>
+            </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>查询成绩信息</button>
+            </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>删除成绩信息</button>
+            </div>
+            <div class="text-center col-md-3 col-sm-6">
+                <button>移除学生信息</button>
+            </div>
+
         </div>
         <ul class="forms">
             <li class="show">
@@ -159,6 +181,134 @@
                     </div>
                 </form>
             </li>
+            <li>
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/school.add.cgi">
+                    <div class="form-group">
+                        <label for="Sid" class="col-sm-2 control-label">学院编号</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="sid" class="form-control" id="Sid" placeholder="请输入学院编号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Sname" class="col-sm-2 control-label"> 学院名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Sname" class="form-control" id="Sname" placeholder="请输入学院姓名">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">提交</button>
+                        <button type="reset" class="btn btn-success">重置</button>
+                    </div>
+                </form>
+            </li>
+
+            <li>
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/school.sel.cgi">
+                    <div class="form-group">
+                        <label for="Sid-sel" class="col-sm-2 control-label">输入学院编号</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Sid" class="form-control" id="Sid-sel" placeholder="输入*查询所有">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">提交</button>
+                        <button type="reset" class="btn btn-success">重置</button>
+                    </div>
+                </form>
+            </li>
+            <li>
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/school.del.cgi">
+                    <div class="form-group">
+                        <label for="Sid-del" class="col-sm-2 control-label">输入要删除的学院编号</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="Sid" class="form-control" id="Sid-del" placeholder="输入学院编号">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">提交</button>
+                        <button type="reset" class="btn btn-success">重置</button>
+                    </div>
+                </form>
+            </li>
+            <li>
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/score.add.cgi">
+                  <div class="form-group">
+                      <label for="id" class="col-sm-2 control-label">学生编号</label>
+                      <div class="col-sm-10">
+                          <input type="text" name="id" class="form-control" id="id" placeholder="请输入学生编号">
+                      </div>
+                  </div>
+                    <div class="form-group">
+                        <label for="course" class="col-sm-2 control-label"> 课程名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="course" class="form-control" id="course" placeholder="请输入课程名称">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="score" class="col-sm-2 control-label"> 课程成绩</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="score" class="form-control" id="score" placeholder="请输入课程成绩">
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">提交</button>
+                        <button type="reset" class="btn btn-success">重置</button>
+                    </div>
+                </form>
+            </li>
+            <li>
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/score.sel.cgi">
+                    <div class="form-group">
+                        <label for="id-sel" class="col-sm-2 control-label">输入学生编号</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="id" class="form-control" id="id-sel" placeholder="输入*查询所有">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">提交</button>
+                        <button type="reset" class="btn btn-success">重置</button>
+                    </div>
+                </form>
+            </li>
+            <li>
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/score.del.cgi">
+                <div class="form-group">
+                    <label for="id-edl" class="col-sm-2 control-label">学生编号</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="id" class="form-control" id="id-del" placeholder="请输入学生编号">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="course-del" class="col-sm-2 control-label">课程名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="course" class="form-control" id="course-del" placeholder="请输入课程名称">
+                        </div>
+                        </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">提交</button>
+                        <button type="reset" class="btn btn-success">重置</button>
+                    </div>
+                </form>
+            </li>
+            <li>
+                <form class="form-horizontal" method="get" action="/cgi-bin/sx/status.cgi">
+                <div class="form-group">
+                    <label for="id-edl" class="col-sm-2 control-label">学生编号</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="id" class="form-control" id="id-del" placeholder="请输入学生编号">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">提交</button>
+                        <button type="reset" class="btn btn-success">重置</button>
+                    </div>
+                </form>
+            </li>
+
+
+
+
         </ul>
     </div>
     <script src="./public/js/jquery-3.0.0.min.js"></script>
